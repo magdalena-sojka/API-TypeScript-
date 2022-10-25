@@ -5,25 +5,27 @@ import employeesRoutes from './routes/employees.routes'
 import productsRoutes from './routes/products.routes'
 
 class App {
-  app: express.Application
-  routes: [] = []
-  server: any
+  private app: express.Application
+  private routes: { path: string; routes: any }[] = []
+  private server: any
+  private path: string
+  private port: string
 
   constructor() {
     this.app = express()
   }
 
-  addRoutes(path, routes) {
+  public addRoutes(path: string, routes: any) {
     this.routes.push({ path, routes })
   }
 
-  prepareRoutes() {
+  public prepareRoutes() {
     for(const group of this.routes) {
       this.app.use(group.path, group.routes)
     }
   }
 
-  run(port) {
+  public run(port: string) {
 
     this.app.use(cors())
     this.app.use(express.json())
