@@ -8,8 +8,6 @@ class App {
   private app: express.Application
   private routes: { path: string; routes: any }[] = []
   private server: any
-  private path: string
-  private port: string
 
   constructor() {
     this.app = express()
