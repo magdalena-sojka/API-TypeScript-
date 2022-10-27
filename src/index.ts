@@ -1,9 +1,9 @@
-import express from 'express'
-import cors from 'cors'
-import departmentsRoutes from './routes/departments.routes'
-import employeesRoutes from './routes/employees.routes'
-import productsRoutes from './routes/products.routes'
-import http from 'http'
+import express from 'express';
+import cors from 'cors';
+import departmentsRoutes from './routes/departments.routes';
+import employeesRoutes from './routes/employees.routes';
+import productsRoutes from './routes/products.routes';
+import http from 'http';
 
 class App {
   private app: express.Application
